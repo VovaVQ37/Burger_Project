@@ -1,0 +1,51 @@
+.сonstructor {
+  width: 1000px;
+  height: 912px;
+  left: 1020px;
+
+
+
+  padding: 20px;
+  background: #1c1c21;
+  border-radius: 8px;
+  color: white;
+}
+
+.constructor__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.constructor__item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #2f2f37;
+}
+
+.constructor__img {
+  width: 80px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.constructor__price {
+  width: 30;
+  height: 24;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.constructor__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ingredients__scroll {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 8px;
+}

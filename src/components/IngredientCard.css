@@ -1,0 +1,8 @@
+.constructor__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* перенос на новую строку при нехватке места */
+  gap: 24px;       /* расстояние между карточками */
+  margin-bottom: 32px;
+}
+

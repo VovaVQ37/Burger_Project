@@ -1,0 +1,19 @@
+.order-details {
+  text-align: center;
+  padding: 20px;
+}
+
+.order-details__number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #00cccc;
+}
+
+.order-number {
+  font-family: 'Iceland', sans-serif; /* Iceland из Figma */
+  font-size: 144px;
+  line-height: 120px;
+  color: #F2F2F3;
+  text-shadow: 0 0 8px #4C4CFF;
+  text-align: center;
+}
