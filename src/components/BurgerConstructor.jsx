@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
+import { Button, CurrencyIcon, DeleteIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import './BurgerConstructor.css';
 
-function BurgerConstructor({ ingredients, onOrderClick }) {
+function BurgerConstructor({ ingredients, onOrderClick, onRemove }) {
   const totalPrice = ingredients.reduce((acc, item) => acc + item.price, 0);
 
   return (
@@ -18,6 +18,12 @@ function BurgerConstructor({ ingredients, onOrderClick }) {
             <span className="constructor__price ml-auto">
               {item.price} <CurrencyIcon type="primary" />
             </span>
+            <button
+              className="constructor__remove"
+              onClick={() => onRemove(index)}
+              >
+                <DeleteIcon type="primary" />
+              </button>
           </li>
         ))}
       </ul>
@@ -38,6 +44,7 @@ function BurgerConstructor({ ingredients, onOrderClick }) {
 BurgerConstructor.propTypes = {
   ingredients: PropTypes.array.isRequired,
   onOrderClick: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired,
 };
 
 export default BurgerConstructor;

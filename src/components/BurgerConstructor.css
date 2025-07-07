@@ -49,3 +49,14 @@
   overflow-y: auto;
   padding-right: 8px;
 }
+
+.constructor__remove {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+}

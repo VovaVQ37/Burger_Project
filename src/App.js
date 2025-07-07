@@ -25,6 +25,14 @@ function App() {
     setSelectedIngredients(prev => [...prev, ingredient]);
   };
 
+  // App.jsx
+const handleRemoveIngredient = (indexToRemove) => {
+  setSelectedIngredients(prev =>
+    prev.filter((_, index) => index !== indexToRemove)
+  );
+};
+
+
   // открытие и закрытие модального окна
   const handleOrderClick = () => {
     setIsModalOpen(true);
@@ -42,11 +50,13 @@ function App() {
         <BurgerIngredients
           ingredients={ingredients}
           onAdd={handleAddIngredient}
+          
         />
         
         <BurgerConstructor
           ingredients={selectedIngredients}
           onOrderClick={handleOrderClick}
+          onRemove={handleRemoveIngredient}
         />
       </main>
 
