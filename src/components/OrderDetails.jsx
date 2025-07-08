@@ -5,7 +5,7 @@ import './Modal.css';
 
 function OrderDetails() {
   const [orderNumber] = React.useState(() =>
-    Math.floor(345 + Math.random() * 1000) // например, 345–1345
+    Math.floor(345 + Math.random() * 1000) 
   );
 
   return (

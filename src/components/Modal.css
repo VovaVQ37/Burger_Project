@@ -31,15 +31,15 @@
 }
 
 .order-number {
-  font-family: 'Iceland', sans-serif; /* Шрифт из Figma */
-  font-size: 144px;                   /* Размер */
-  line-height: 120px;                 /* Межстрочный интервал */
-  font-weight: 400;                   /* Вес шрифта */
-  color: #F2F2F3;                     /* Цвет текста */
-  text-align: center;                /* Центровка по горизонтали */
+  font-family: 'Iceland', sans-serif; 
+  font-size: 144px;                   
+  line-height: 120px;                 
+  font-weight: 400;                   
+  color: #F2F2F3;                     
+  text-align: center;                
   text-shadow:
-    0 0 4px rgba(51, 51, 255, 0.5),  /* Первый светящийся слой */
-    0 0 8px #4C4CFF;                 /* Второй яркий контур */
-  margin: 0 auto;                     /* Центровка по блоку */
+    0 0 4px rgba(51, 51, 255, 0.5),  
+    0 0 8px #4C4CFF;                 
+  margin: 0 auto;                    
 }
 
