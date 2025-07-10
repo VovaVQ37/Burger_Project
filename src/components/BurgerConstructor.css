@@ -60,3 +60,12 @@
   cursor: pointer;
   line-height: 1;
 }
+
+.burger__description {
+  background: transparent;
+  border: none;
+  color: #4c4cff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 8px;
+}

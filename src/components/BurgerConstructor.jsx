@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, CurrencyIcon, DeleteIcon } from '@ya.praktikum/react-developer-burger-ui-components';
+import { Button, CurrencyIcon, DeleteIcon, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import './BurgerConstructor.css';
 
 function BurgerConstructor({ ingredients, onOrderClick, onRemove }) {
   const totalPrice = ingredients.reduce((acc, item) => acc + item.price, 0);
+  const handleShowDescription = (item) => {
+  console.log('Описание:', item);
+};
+
 
   return (
     <section className="constructor">
@@ -13,6 +17,12 @@ function BurgerConstructor({ ingredients, onOrderClick, onRemove }) {
       <ul className="constructor__list">
         {ingredients.map((item, index) => (
           <li key={`${item._id}-${index}`} className="constructor__item">
+            <button
+              className="burger__description"
+              onClick={() => handleShowDescription(index)}
+              >
+                <DragIcon type="primary" />
+              </button>
             <img src={item.image} alt={item.name} className="constructor__img" />
             <span className="text text_type_main-default ml-2">{item.name}</span>
             <span className="constructor__price ml-auto">
