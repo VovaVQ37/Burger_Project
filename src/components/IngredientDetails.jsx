@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './IngredientDetails.css';
+import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
+import './IngredientDetails.css';
 
 function IngredientDetails({ ingredient }) {
   if (!ingredient) return null;

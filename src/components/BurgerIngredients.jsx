@@ -5,6 +5,7 @@ import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components
 import "./BurgerIngredients.css";
 import IngredientCard from "./IngredientCard";
 
+
 function BurgerIngredients({ ingredients, onAdd }) {
   const [activeTab, setActiveTab] = useState("bun");
 

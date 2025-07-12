@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 import { Button, CurrencyIcon, DeleteIcon, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import './BurgerConstructor.css';
 
-function BurgerConstructor({ ingredients, onOrderClick, onRemove }) {
+function BurgerConstructor({ ingredients, onOrderClick, onRemove, onShowDescription}) {
   const totalPrice = ingredients.reduce((acc, item) => acc + item.price, 0);
-  const handleShowDescription = (item) => {
-  console.log('Описание:', item);
-};
-
+  
 
   return (
     <section className="constructor">
@@ -19,7 +16,7 @@ function BurgerConstructor({ ingredients, onOrderClick, onRemove }) {
           <li key={`${item._id}-${index}`} className="constructor__item">
             <button
               className="burger__description"
-              onClick={() => handleShowDescription(index)}
+              onClick={() => onShowDescription(index)}
               >
                 <DragIcon type="primary" />
               </button>
@@ -55,6 +52,7 @@ BurgerConstructor.propTypes = {
   ingredients: PropTypes.array.isRequired,
   onOrderClick: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
+  onShowDescription: PropTypes.func.isRequired,
 };
 
 export default BurgerConstructor;
