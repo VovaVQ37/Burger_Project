@@ -13,8 +13,9 @@ const ItemTypes = {
   INGREDIENT: "ingredient",
 };
 
-function DraggableItem({ item, index, moveItem, onRemove, onShowDescription }) {
+function DraggableItem({ item, index, moveItem, onRemove }) {
   const ref = useRef(null);
+  const dragRef = useRef(null);
 
   const [, drop] = useDrop({
     accept: ItemTypes.INGREDIENT,
@@ -33,7 +34,8 @@ function DraggableItem({ item, index, moveItem, onRemove, onShowDescription }) {
     }),
   });
 
-  drag(drop(ref));
+  drag(dragRef);
+  drop(ref);
 
   return (
     <li
@@ -41,12 +43,9 @@ function DraggableItem({ item, index, moveItem, onRemove, onShowDescription }) {
       className="constructor__item"
       style={{ opacity: isDragging ? 0.5 : 1 }}
     >
-      <button
-        className="burger__description"
-        onClick={() => onShowDescription(item)}
-      >
+      <div ref={dragRef} className="burger__description">
         <DragIcon type="primary" />
-      </button>
+      </div>
       <img src={item.image} alt={item.name} className="constructor__img" />
       <span className="text text_type_main-default ml-2">{item.name}</span>
       <span className="constructor__price ml-auto">
@@ -64,14 +63,13 @@ DraggableItem.propTypes = {
   index: PropTypes.number.isRequired,
   moveItem: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
-  onShowDescription: PropTypes.func.isRequired,
 };
 
 function BurgerConstructor({
   ingredients,
   onOrderClick,
   onRemove,
-  onShowDescription,
+
   setSelectedIngredients,
 }) {
   const totalPrice = ingredients.reduce((acc, item) => acc + item.price, 0);
@@ -95,7 +93,6 @@ function BurgerConstructor({
               index={index}
               moveItem={moveItem}
               onRemove={onRemove}
-              onShowDescription={onShowDescription}
             />
           ))}
         </ul>
