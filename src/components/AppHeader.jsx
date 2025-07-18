@@ -6,6 +6,7 @@ import {
   ProfileIcon
 } from '@ya.praktikum/react-developer-burger-ui-components';
 import './AppHeader.css'; 
+import { Link } from "react-router-dom"
 
 function AppHeader() {
   return (
@@ -25,10 +26,11 @@ function AppHeader() {
           <Logo />
         </div>
         <div className="header__group">
-          <a href="/" className="header__link">
+          <Link to="/profile" className='header__link'>
+          
             <ProfileIcon type="secondary" />
             <span className="text text_type_main-default ml-2">Личный кабинет</span>
-          </a>
+          </Link>
         </div>
       </nav>
     </header>

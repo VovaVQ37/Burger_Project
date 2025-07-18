@@ -6,6 +6,10 @@ import Modal from "./components/Modal";
 import OrderDetails from "./components/OrderDetails";
 import { API_URL } from "./constants/api";
 import "./App.css";
+import ProfilePage from "./pages/ProfilePage";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 function App() {
   const [ingredients, setIngredients] = useState([]);
@@ -42,9 +46,12 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <Router>
+      <div className="app">
       <AppHeader />
-      <main className="main-content">
+      <Routes>
+        <Route path="/" element={
+        <main className="main-content">
         <BurgerIngredients
           ingredients={ingredients}
           onAdd={handleAddIngredient}
@@ -56,14 +63,20 @@ function App() {
           onRemove={handleRemoveIngredient}
           setSelectedIngredients={setSelectedIngredients}
         />
-      </main>
+      
+
 
       {isModalOpen && (
         <Modal onClose={handleCloseModal}>
           <OrderDetails />
         </Modal>
       )}
+      </main>
+        } />
+        <Route path="/profile" element={<ProfilePage />} />
+        </Routes>
     </div>
+    </Router>
   );
 }
 
