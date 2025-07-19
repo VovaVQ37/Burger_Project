@@ -7,6 +7,8 @@ import OrderDetails from "./components/OrderDetails";
 import { API_URL } from "./constants/api";
 import "./App.css";
 import ProfilePage from "./pages/ProfilePage";
+import LoginPage from "./pages/LoginPage";
+
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -73,6 +75,7 @@ function App() {
       )}
       </main>
         } />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         </Routes>
     </div>

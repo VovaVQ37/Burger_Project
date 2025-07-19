@@ -26,7 +26,7 @@ function AppHeader() {
           <Logo />
         </div>
         <div className="header__group">
-          <Link to="/profile" className='header__link'>
+          <Link to="/login" className='header__link'>
           
             <ProfileIcon type="secondary" />
             <span className="text text_type_main-default ml-2">Личный кабинет</span>
